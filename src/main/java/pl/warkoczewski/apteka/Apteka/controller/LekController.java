@@ -3,7 +3,6 @@ package pl.warkoczewski.apteka.Apteka.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
 import pl.warkoczewski.apteka.Apteka.model.Lek;
 import pl.warkoczewski.apteka.Apteka.service.LekiService;
 
