@@ -1,15 +1,15 @@
 package pl.warkoczewski.apteka.Apteka.controller;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 import pl.warkoczewski.apteka.Apteka.model.Lek;
 import pl.warkoczewski.apteka.Apteka.service.LekiService;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class LekController {
 
     private final LekiService lekiService;
@@ -18,9 +18,10 @@ public class LekController {
         this.lekiService = lekiService;
     }
 
-    @GetMapping(value = "/wszystkieLeki", produces = "application/json")
-    public ResponseEntity<List<Lek>> displayAllLek(){
+    @GetMapping("/leki")
+    public String displayLek(Model model){
         List<Lek> leki = lekiService.getLeki();
-        return new ResponseEntity<>(leki, HttpStatus.OK);
+        model.addAttribute("leki", leki);
+        return "leki";
     }
 }
