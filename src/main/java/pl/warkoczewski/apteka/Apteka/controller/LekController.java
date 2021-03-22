@@ -10,11 +10,11 @@ import pl.warkoczewski.apteka.Apteka.service.LekiService;
 import java.util.List;
 
 @RestController
-public class LekiController {
+public class LekController {
 
     private final LekiService lekiService;
 
-    public LekiController(LekiService lekiService) {
+    public LekController(LekiService lekiService) {
         this.lekiService = lekiService;
     }
 
