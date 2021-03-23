@@ -17,13 +17,13 @@ import java.util.List;
 public class LekiFetcher {
 
     private static final String LEKI_URL = "http://localhost:8080/wszystkieLeki";
-
+    @EventListener(ApplicationEvent.class)
     public List<Lek> fetchLeki() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
         Lek[] leki = restTemplate.getForObject(LEKI_URL, Lek[].class);
         assert leki != null;
         List<Lek> lekiList = Arrays.asList(leki);
-        lekiList.stream().forEach(lek -> System.out.println(lek.toString()));
+        lekiList.forEach(lek -> System.out.println(lek.toString()));
         return lekiList;
     }
 

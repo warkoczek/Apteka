@@ -10,7 +10,7 @@ public class TabelaLeki extends JPanel {
     ListToArrayConverter listToArrayConverter;
 
     public TabelaLeki() throws URISyntaxException {
-        String[] columns = {"Id", "Name"};
+        String[] columns = {"Id", "Name", "Expiry Date", "Amount"};
 
         String[][] leki = listToArrayConverter.convertListToArray();
 
