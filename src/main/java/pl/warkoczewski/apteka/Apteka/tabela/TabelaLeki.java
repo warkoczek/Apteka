@@ -2,15 +2,17 @@ package pl.warkoczewski.apteka.Apteka.tabela;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URISyntaxException;
 
 public class TabelaLeki extends JPanel {
 
     JTable jTable;
+    ListToArrayConverter listToArrayConverter;
 
-    public TabelaLeki() {
+    public TabelaLeki() throws URISyntaxException {
         String[] columns = {"Id", "Name"};
 
-        String[][] leki = {{"1", "Nurofen"}, {"2", "Gripex"}, {"3", "Apap"}, {"4", "Mydocam"}};
+        String[][] leki = listToArrayConverter.convertListToArray();
 
         jTable = new JTable(leki, columns);
         jTable.setPreferredScrollableViewportSize(new Dimension(500, 700));
@@ -20,7 +22,7 @@ public class TabelaLeki extends JPanel {
         add(jScrollPane);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws URISyntaxException {
 
         JFrame jFrame = new JFrame();
         TabelaLeki tabelaLeki = new TabelaLeki();
