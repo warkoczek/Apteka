@@ -1,9 +1,10 @@
 package pl.warkoczewski.apteka.Apteka.model;
 
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import lombok.Data;
 
+import java.time.LocalDate;
+@Data
 public class Lek {
 
     private Long id;
